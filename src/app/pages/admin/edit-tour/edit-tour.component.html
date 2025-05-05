@@ -1,0 +1,12 @@
+<h2>Modifier le tour</h2>
+<form [formGroup]="tourForm" (ngSubmit)="updateTour()">
+  <!-- Réutilisez le même formulaire que dans add-tour.component.html -->
+  <mat-form-field appearance="fill">
+    <mat-label>Titre</mat-label>
+    <input matInput formControlName="title" />
+  </mat-form-field>
+
+  <!-- Ajoutez les autres champs ici (identiques à ceux d'add-tour.component.html) -->
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="tourForm.invalid">Modifier</button>
+</form>

@@ -1,0 +1,12 @@
+<mat-sidenav-container class="admin-container">
+    <mat-sidenav mode="side" opened>
+      <h3>Admin Panel</h3>
+      <a mat-button routerLink="dashboard">📊 Dashboard</a>
+      <a mat-button routerLink="tours">🧭 Gérer les tours</a>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

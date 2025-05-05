@@ -1,0 +1,32 @@
+<!-- tour-details.component.html -->
+<div class="tour-details-container" *ngIf="tour">
+    <mat-card class="tour-details-card">
+      <img mat-card-image [src]="tour.image" alt="Image du tour" />
+      <mat-card-header>
+        <mat-card-title>{{ tour.title }}</mat-card-title>
+        <mat-card-subtitle>{{ tour.country }} - {{ tour.continent }}</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <p class="description">{{ tour.description }}</p>
+        <ul class="details-list">
+          <li><mat-icon>place</mat-icon> Destination: {{ tour.country }}, {{ tour.continent }}</li>
+          <li><mat-icon>hotel</mat-icon> Hébergement: {{ tour.accommodation }}</li>
+          <li><mat-icon>schedule</mat-icon> Durée: {{ tour.duration }} jours</li>
+          <li><mat-icon>attach_money</mat-icon> Prix: {{ tour.price }} €</li>
+        </ul>
+      </mat-card-content>
+  
+      <mat-card-actions class="actions">
+        <button mat-raised-button color="accent" [routerLink]="['/reservation-summary']">
+            Réserver maintenant
+          </button>
+          
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  <div *ngIf="!tour">
+    <p>Chargement des détails...</p>
+  </div>
+  

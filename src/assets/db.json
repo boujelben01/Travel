@@ -1,0 +1,143 @@
+{
+  "continents": [
+    {
+      "name": "Europe",
+      "countries": [
+        "France",
+        "Italy",
+        "Spain"
+      ]
+    },
+    {
+      "name": "Asia",
+      "countries": [
+        "Japan",
+        "Thailand",
+        "Vietnam"
+      ]
+    },
+    {
+      "name": "Africa",
+      "countries": [
+        "Morocco",
+        "Kenya",
+        "South Africa"
+      ]
+    },
+    {
+      "name": "America",
+      "countries": [
+        "USA",
+        "Brazil",
+        "Canada"
+      ]
+    },
+    {
+      "name": "Australia",
+      "countries": [
+        "Australia",
+        "New Zealand"
+      ]
+    }
+  ],
+  "tours": [
+    {
+      "id": 1,
+      "title": "Découverte du Japon",
+      "country": "Japan",
+      "continent": "Asia",
+      "price": 1200,
+      "image": "assets/images/japan.jpg",
+      "duration": 7,
+      "accommodation": "Hotel",
+      "description": "Explorez Tokyo, Kyoto et Osaka dans un circuit complet."
+    },
+    {
+      "id": 2,
+      "title": "Romance à Paris",
+      "country": "France",
+      "continent": "Europe",
+      "price": 980,
+      "image": "assets/images/paris.jpg",
+      "duration": 5,
+      "accommodation": "Maison",
+      "description": "Un séjour romantique au cœur de Paris."
+    },
+    {
+      "id": 3,
+      "title": "Safari au Kenya",
+      "country": "Kenya",
+      "continent": "Africa",
+      "price": 1500,
+      "image": "assets/images/kenya.jpg",
+      "duration": 6,
+      "accommodation": "Camping",
+      "description": "Safari à la rencontre des Big Five en Afrique."
+    }
+  ],
+  "accommodations": [
+    {
+      "id": 1,
+      "country": "France",
+      "name": "Hôtel du Louvre",
+      "type": "Hotel",
+      "city": "Paris",
+      "pricePerNight": 120,
+      "stars": 4,
+      "image": "assets/images/louvre.jpg",
+      "availableFrom": "2025-05-10",
+      "availableTo": "2025-12-31"
+    },
+    {
+      "id": 2,
+      "country": "France",
+      "name": "Maison de Provence",
+      "type": "Maison",
+      "city": "Avignon",
+      "pricePerNight": 90,
+      "stars": 3,
+      "image": "assets/images/provence.jpg",
+      "availableFrom": "2025-06-01",
+      "availableTo": "2025-09-30"
+    },
+    {
+      "id": 3,
+      "country": "Japon",
+      "name": "Kyoto Ryokan",
+      "type": "Ryokan",
+      "city": "Kyoto",
+      "pricePerNight": 150,
+      "stars": 5,
+      "image": "assets/images/kyoto.jpg",
+      "availableFrom": "2025-04-01",
+      "availableTo": "2025-11-15"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "name": "Admin User",
+      "role": "admin"
+    },
+    {
+      "email": "user@gmail.com",
+      "name": "Regular User"
+    },
+    {
+      "id": "8189",
+      "email": "salloufa@gmail.com",
+      "name": "salloufa"
+    },
+    {
+      "id": "c5bd",
+      "email": "yazid@gmail.com",
+      "name": "yazid"
+    },
+    {
+      "id": "5725",
+      "email": "sousou@gmail.com",
+      "name": "sousou"
+    }
+  ]
+}

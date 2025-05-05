@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <span class="logo">🌍 Travel Agency</span>
+  <span class="spacer"></span>
+
+  <a mat-button routerLink="/">🏠 Accueil</a>
+  <a mat-button routerLink="/tours">🧭 Tours</a>
+  <a mat-button routerLink="/planner/1">📋 Planifier</a>
+
+  <span class="spacer"></span>
+
+  <ng-container *ngIf="isLoggedIn">
+    <span>👤 {{ currentUserName }}</span>
+    <button mat-button (click)="logout()">🚪 Déconnexion</button>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoggedIn">
+    <a mat-button routerLink="/login">🔐 Connexion</a>
+    <a mat-button routerLink="/register">📝 Inscription</a>
+  </ng-container>
+</mat-toolbar>

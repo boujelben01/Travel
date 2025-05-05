@@ -1,0 +1,39 @@
+<form (ngSubmit)="searchTours()" class="search-form" #form="ngForm">
+  <!-- CONTINENT -->
+  <mat-form-field appearance="fill">
+    <mat-label>Continent</mat-label>
+    <mat-select [(ngModel)]="formData.continent" name="continent" (selectionChange)="onContinentChange($event.value)" >
+      <mat-option *ngFor="let c of continents" [value]="c.name">{{ c.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- PAYS -->
+  <mat-form-field appearance="fill" *ngIf="countries.length > 0">
+    <mat-label>Pays</mat-label>
+    <mat-select [(ngModel)]="formData.country" name="country" >
+      <mat-option *ngFor="let p of countries" [value]="p">{{ p }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- DATES -->
+  <mat-form-field appearance="fill">
+    <mat-label>Dates de voyage</mat-label>
+    <mat-date-range-input [rangePicker]="picker" [min]="minDate">
+      <input matStartDate placeholder="Date d'aller" [(ngModel)]="formData.date1" name="date1"  />
+      <input matEndDate placeholder="Date de retour" [(ngModel)]="formData.date2" name="date2"  />
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  <!-- PERSONNES -->
+  <mat-form-field appearance="fill">
+    <mat-label>Personnes</mat-label>
+    <mat-select [(ngModel)]="formData.persons" name="persons" >
+      <mat-option *ngFor="let n of [1,2,3,4,5]" [value]="n">{{ n }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- BOUTON -->
+  <button mat-raised-button color="warn" type="submit">Soumettre</button>
+</form>

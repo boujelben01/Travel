@@ -1,0 +1,38 @@
+<div *ngIf="reservation; else notFound" class="summary-container">
+    <mat-card class="summary-card">
+      <mat-card-header>
+        <mat-card-title>Résumé de votre réservation</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <p><strong>Destination :</strong> {{ reservation.country }}, {{ reservation.continent }}</p>
+        <p><strong>Dates :</strong> {{ reservation.date1 | date }} → {{ reservation.date2 | date }}</p>
+        <p><strong>Nombre de personnes :</strong> {{ reservation.persons }}</p>
+  
+        <ng-container *ngIf="reservation.accommodation">
+          <h3 style="margin-top: 1rem;">Hébergement sélectionné :</h3>
+          <mat-card class="acc-card">
+            <img mat-card-image [src]="reservation.accommodation.image" alt="Hébergement" />
+            <mat-card-content>
+              <p><strong>{{ reservation.accommodation.name }}</strong> ({{ reservation.accommodation.type }})</p>
+              <p><mat-icon>location_on</mat-icon> {{ reservation.accommodation.city }}, {{ reservation.accommodation.country }}</p>
+              <p><mat-icon>star</mat-icon> {{ reservation.accommodation.stars }} étoiles</p>
+              <p><mat-icon>attach_money</mat-icon> {{ reservation.accommodation.pricePerNight }} €/nuit</p>
+            </mat-card-content>
+          </mat-card>
+        </ng-container>
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="confirm()">Confirmer</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  <ng-template #notFound>
+    <div class="no-reservation">
+      <p>Aucune réservation trouvée.</p>
+      <button mat-button routerLink="/">Retour à l’accueil</button>
+    </div>
+  </ng-template>
+  

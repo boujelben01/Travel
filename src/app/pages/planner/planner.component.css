@@ -1,0 +1,57 @@
+
+.planner-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  mat-form-field {
+    width: 280px;
+  }
+  
+  .acc-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-content: center;
+  }
+  
+  .acc-card {
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .acc-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  
+  .acc-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .acc-info h3 {
+    margin: 0 0 0.3rem;
+    font-size: 1.1rem;
+  }
+  
+  .acc-info mat-icon {
+    font-size: 18px;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    color: #1976d2;
+  }
+  

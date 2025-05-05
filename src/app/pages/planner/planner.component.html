@@ -1,0 +1,55 @@
+<form class="planner-form">
+    <!-- CONTINENT -->
+    <mat-form-field appearance="fill">
+      <mat-label>Continent</mat-label>
+      <mat-select [(ngModel)]="formData.continent" name="continent" (selectionChange)="onContinentChange($event.value)" required>
+        <mat-option *ngFor="let c of continents" [value]="c.name">{{ c.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <!-- PAYS -->
+    <mat-form-field appearance="fill">
+      <mat-label>Pays</mat-label>
+      <mat-select [(ngModel)]="formData.country" name="country" (selectionChange)="onCountryChange($event.value)" required>
+        <mat-option *ngFor="let p of countries" [value]="p">{{ p }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <!-- DATES -->
+    <mat-form-field appearance="fill">
+      <mat-label>Dates</mat-label>
+      <mat-date-range-input [rangePicker]="picker" [min]="minDate">
+        <input matStartDate placeholder="Aller" [(ngModel)]="formData.date1" name="date1" (ngModelChange)="onCountryChange(formData.country)" required>
+        <input matEndDate placeholder="Retour" [(ngModel)]="formData.date2" name="date2" (ngModelChange)="onCountryChange(formData.country)" required>
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  
+    <!-- PERSONNES -->
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre de personnes</mat-label>
+      <mat-select [(ngModel)]="formData.persons" name="persons" required>
+        <mat-option *ngFor="let n of [1, 2, 3, 4, 5]" [value]="n">{{ n }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  
+  <!-- HÉBERGEMENTS DISPONIBLES -->
+  <div *ngIf="accommodations.length > 0" class="acc-grid">
+    <mat-card *ngFor="let acc of accommodations" class="acc-card">
+      <img [src]="acc.image" alt="{{ acc.name }}" class="acc-image" />
+      <div class="acc-info">
+        <h3>{{ acc.name }} ({{ acc.type }})</h3>
+        <p><mat-icon>location_on</mat-icon> {{ acc.city }}, {{ acc.country }}</p>
+        <p><mat-icon>star</mat-icon> {{ acc.stars }} étoiles</p>
+        <p><mat-icon>attach_money</mat-icon> {{ acc.pricePerNight }} €/nuit</p>
+        <p><mat-icon>calendar_today</mat-icon> {{ acc.availableFrom }} → {{ acc.availableTo }}</p>
+      </div>
+      <mat-card-actions>
+        <button mat-stroked-button color="accent" (click)="reserveAccommodation(acc)">
+          Réserver cet hébergement
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

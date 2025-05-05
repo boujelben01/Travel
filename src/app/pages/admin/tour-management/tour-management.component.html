@@ -1,0 +1,47 @@
+<div class="tour-table-container">
+    <button mat-raised-button color="primary" (click)="openAddDialog()">➕ Ajouter un tour</button>
+  
+    <table mat-table [dataSource]="tours" class="mat-elevation-z8">
+  
+      <!-- ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let tour">{{ tour.id }}</td>
+      </ng-container>
+  
+      <!-- Title -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Titre</th>
+        <td mat-cell *matCellDef="let tour">{{ tour.title }}</td>
+      </ng-container>
+  
+      <!-- Country -->
+      <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef>Pays</th>
+        <td mat-cell *matCellDef="let tour">{{ tour.country }}</td>
+      </ng-container>
+  
+      <!-- Price -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Prix</th>
+        <td mat-cell *matCellDef="let tour">{{ tour.price }} €</td>
+      </ng-container>
+  
+      <!-- Actions -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let tour">
+          <button mat-icon-button color="accent" (click)="editTour(tour)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteTour(tour.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    </table>
+  </div>
+  

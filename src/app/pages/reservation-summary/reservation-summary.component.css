@@ -1,0 +1,30 @@
+.summary-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .summary-card {
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+  }
+  
+  .acc-card {
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .acc-card img {
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .no-reservation {
+    text-align: center;
+    margin-top: 4rem;
+  }
+  
