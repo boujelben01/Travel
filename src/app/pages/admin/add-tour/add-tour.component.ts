@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TourService } from 'src/app/core/services/tour.service';
@@ -13,8 +14,10 @@ export class AddTourComponent {
 
   constructor(
     private fb: FormBuilder,
-    private tourService: TourService,
-    private router: Router
+    private router: Router,
+    private dialogRef: MatDialogRef<AddTourComponent>,
+    private tourService: TourService
+
   ) {
     this.tourForm = this.fb.group({
       title: ['', Validators.required],
@@ -33,10 +36,9 @@ export class AddTourComponent {
       this.tourService.addTour(this.tourForm.value).subscribe({
         next: () => {
           console.log('Tour ajouté avec succès');
-          this.router.navigate(['/admin/tours']); // Redirige vers la liste des tours
+          this.dialogRef.close('refresh'); // ✅ ferme le modal avec signal de reload
         },
         error: (err) => console.error('Erreur lors de l\'ajout du tour :', err)
       });
     }
-  }
-}
+  }}

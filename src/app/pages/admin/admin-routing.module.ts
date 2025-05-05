@@ -14,7 +14,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'tours', component: TourManagementComponent },
-      { path: 'tours/add', component: AddTourComponent },
+      { path: 'add-tour/new', component: AddTourComponent } ,
       { path: 'tours/edit/:id', component: EditTourComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]

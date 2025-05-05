@@ -4,7 +4,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { NgChartsModule } from 'ng2-charts';
 
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { LayoutComponent } from './layout/layout.component';
@@ -18,7 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -39,7 +39,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatPaginatorModule
 
   ]
 })

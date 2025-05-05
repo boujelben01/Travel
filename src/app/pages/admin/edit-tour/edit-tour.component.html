@@ -1,12 +1,56 @@
 <h2>Modifier le tour</h2>
 <form [formGroup]="tourForm" (ngSubmit)="updateTour()">
-  <!-- Réutilisez le même formulaire que dans add-tour.component.html -->
   <mat-form-field appearance="fill">
     <mat-label>Titre</mat-label>
     <input matInput formControlName="title" />
   </mat-form-field>
 
-  <!-- Ajoutez les autres champs ici (identiques à ceux d'add-tour.component.html) -->
+  <mat-form-field appearance="fill">
+    <mat-label>Pays</mat-label>
+    <input matInput formControlName="country" />
+  </mat-form-field>
 
-  <button mat-raised-button color="primary" type="submit" [disabled]="tourForm.invalid">Modifier</button>
+  <mat-form-field appearance="fill">
+    <mat-label>Continent</mat-label>
+    <mat-select formControlName="continent">
+      <mat-option *ngFor="let c of ['Europe', 'Asia', 'Africa', 'America', 'Australia']" [value]="c">
+        {{ c }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Prix (€)</mat-label>
+    <input matInput type="number" formControlName="price" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Durée (jours)</mat-label>
+    <input matInput type="number" formControlName="duration" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Hébergement</mat-label>
+    <mat-select formControlName="accommodation">
+      <mat-option value="Hotel">Hotel</mat-option>
+      <mat-option value="Maison">Maison</mat-option>
+      <mat-option value="Auberge">Auberge</mat-option>
+      <mat-option value="Camping">Camping</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="image-upload">
+    <label>Image du tour</label>
+    <input type="file" (change)="onImageSelected($event)" />
+    <img *ngIf="selectedImage" [src]="selectedImage" alt="Preview" width="200" />
+  </div>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="tourForm.invalid">
+    Mettre à jour
+  </button>
 </form>

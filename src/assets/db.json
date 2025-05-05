@@ -6,7 +6,8 @@
         "France",
         "Italy",
         "Spain"
-      ]
+      ],
+      "id": "d390"
     },
     {
       "name": "Asia",
@@ -14,7 +15,8 @@
         "Japan",
         "Thailand",
         "Vietnam"
-      ]
+      ],
+      "id": "ad44"
     },
     {
       "name": "Africa",
@@ -22,7 +24,8 @@
         "Morocco",
         "Kenya",
         "South Africa"
-      ]
+      ],
+      "id": "3406"
     },
     {
       "name": "America",
@@ -30,30 +33,21 @@
         "USA",
         "Brazil",
         "Canada"
-      ]
+      ],
+      "id": "17b2"
     },
     {
       "name": "Australia",
       "countries": [
         "Australia",
         "New Zealand"
-      ]
+      ],
+      "id": "e9ca"
     }
   ],
   "tours": [
     {
-      "id": 1,
-      "title": "Découverte du Japon",
-      "country": "Japan",
-      "continent": "Asia",
-      "price": 1200,
-      "image": "assets/images/japan.jpg",
-      "duration": 7,
-      "accommodation": "Hotel",
-      "description": "Explorez Tokyo, Kyoto et Osaka dans un circuit complet."
-    },
-    {
-      "id": 2,
+      "id": "2",
       "title": "Romance à Paris",
       "country": "France",
       "continent": "Europe",
@@ -64,20 +58,196 @@
       "description": "Un séjour romantique au cœur de Paris."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Safari au Kenya",
       "country": "Kenya",
       "continent": "Africa",
       "price": 1500,
-      "image": "assets/images/kenya.jpg",
+      "image": "assets/images/safari.jpg",
       "duration": 6,
       "accommodation": "Camping",
       "description": "Safari à la rencontre des Big Five en Afrique."
+    },
+    {
+      "id": "4",
+      "title": "Mystères du Machu Picchu",
+      "country": "Peru",
+      "continent": "America",
+      "price": 1100,
+      "image": "assets/images/matchu.jpg",
+      "duration": 7,
+      "accommodation": "Hotel",
+      "description": "Découvrez la cité sacrée des Incas au sommet des Andes."
+    },
+    {
+      "id": "5",
+      "title": "Aventures en Thaïlande",
+      "country": "Thailand",
+      "continent": "Asia",
+      "price": 850,
+      "image": "assets/images/thailand.jpg",
+      "duration": 8,
+      "accommodation": "Auberge",
+      "description": "Un mélange de temples, plages et marchés flottants."
+    },
+    {
+      "id": "6",
+      "title": "Croisière Méditerranéenne",
+      "country": "Italy",
+      "continent": "Europe",
+      "price": 1400,
+      "image": "assets/images/italy.jpg",
+      "duration": 10,
+      "accommodation": "Bateau",
+      "description": "Explorez Rome, Barcelone et Athènes en croisière."
+    },
+    {
+      "id": "7",
+      "title": "Road Trip en Australie",
+      "country": "Australia",
+      "continent": "Australia",
+      "price": 1600,
+      "image": "assets/images/australia.jpg",
+      "duration": 12,
+      "accommodation": "Camping",
+      "description": "Partez à l'aventure entre désert rouge et plages sauvages."
+    },
+    {
+      "id": "8",
+      "title": "Nature et Fjords",
+      "country": "Norway",
+      "continent": "Europe",
+      "price": 1350,
+      "image": "assets/images/norway.jpg",
+      "duration": 6,
+      "accommodation": "Maison",
+      "description": "Voyagez au cœur des fjords norvégiens majestueux."
+    },
+    {
+      "id": "9",
+      "title": "New York City Express",
+      "country": "USA",
+      "continent": "America",
+      "price": 890,
+      "image": "assets/images/nyc.jpg",
+      "duration": 4,
+      "accommodation": "Hotel",
+      "description": "Visitez la Big Apple en un clin d'œil."
+    },
+    {
+      "id": "10",
+      "title": "Trésors du Maroc",
+      "country": "Morocco",
+      "continent": "Africa",
+      "price": 920,
+      "image": "assets/images/morocco.jpg",
+      "duration": 5,
+      "accommodation": "Maison",
+      "description": "Entre dunes du Sahara et souks animés de Marrakech."
+    },
+    {
+      "id": "11",
+      "title": "Charme de la Nouvelle-Zélande",
+      "country": "New Zealand",
+      "continent": "Australia",
+      "price": 1700,
+      "image": "assets/images/newzealand.jpg",
+      "duration": 10,
+      "accommodation": "Hotel",
+      "description": "Découvrez les paysages de la Terre du Milieu."
+    },
+    {
+      "id": "12",
+      "title": "Beauté du Vietnam",
+      "country": "Vietnam",
+      "continent": "Asia",
+      "price": 780,
+      "image": "assets/images/vietnam.jpg",
+      "duration": 7,
+      "accommodation": "Maison",
+      "description": "Des rizières aux grottes karstiques, une immersion unique."
+    },
+    {
+      "id": "13",
+      "title": "Week-end à Barcelone",
+      "country": "Spain",
+      "continent": "Europe",
+      "price": 600,
+      "image": "assets/images/barcelona.jpg",
+      "duration": 3,
+      "accommodation": "Hotel",
+      "description": "Art, plage et tapas au programme."
+    },
+    {
+      "id": "14",
+      "title": "Expédition en Afrique du Sud",
+      "country": "South Africa",
+      "continent": "Africa",
+      "price": 1350,
+      "image": "assets/images/south-africa.jpg",
+      "duration": 7,
+      "accommodation": "Camping",
+      "description": "Observation des baleines et randonnées dans la nature."
+    },
+    {
+      "id": "15",
+      "title": "Grande Muraille et Pékin",
+      "country": "China",
+      "continent": "Asia",
+      "price": 1250,
+      "image": "assets/images/china.jpg",
+      "duration": 6,
+      "accommodation": "Hotel",
+      "description": "Explorez les trésors de la Chine impériale."
+    },
+    {
+      "id": "16",
+      "title": "Îles grecques en liberté",
+      "country": "Greece",
+      "continent": "Europe",
+      "price": 980,
+      "image": "assets/images/greece.jpg",
+      "duration": 6,
+      "accommodation": "Maison",
+      "description": "Détente entre Santorin et Mykonos."
+    },
+    {
+      "id": "17",
+      "title": "Évasion au Canada",
+      "country": "Canada",
+      "continent": "America",
+      "price": 1450,
+      "image": "assets/images/canada.jpg",
+      "duration": 8,
+      "accommodation": "Hotel",
+      "description": "Entre lacs, forêts et villes francophones."
+    },
+    {
+      "id": "18",
+      "title": "Tokyo Futuriste",
+      "country": "Japan",
+      "continent": "Asia",
+      "price": 1300,
+      "image": "assets/images/tokyo.jpg",
+      "duration": 5,
+      "accommodation": "Hotel",
+      "description": "Plongez dans l'effervescence urbaine japonaise."
+    },
+    {
+      "title": "dream tour",
+      "country": "cairo",
+      "continent": "Africa",
+      "price": 1550,
+      "image":"",
+      "duration": 8,
+      "accommodation": "Hotel",
+      "description": "",
+      "id": "7254"
     }
   ],
   "accommodations": [
     {
-      "id": 1,
+      "id": "1",
       "country": "France",
       "name": "Hôtel du Louvre",
       "type": "Hotel",
@@ -89,7 +259,7 @@
       "availableTo": "2025-12-31"
     },
     {
-      "id": 2,
+      "id": "2",
       "country": "France",
       "name": "Maison de Provence",
       "type": "Maison",
@@ -101,7 +271,7 @@
       "availableTo": "2025-09-30"
     },
     {
-      "id": 3,
+      "id": "3",
       "country": "Japon",
       "name": "Kyoto Ryokan",
       "type": "Ryokan",
@@ -118,11 +288,13 @@
       "email": "admin@gmail.com",
       "password": "admin123",
       "name": "Admin User",
-      "role": "admin"
+      "role": "admin",
+      "id": "7dac"
     },
     {
       "email": "user@gmail.com",
-      "name": "Regular User"
+      "name": "Regular User",
+      "id": "63ba"
     },
     {
       "id": "8189",

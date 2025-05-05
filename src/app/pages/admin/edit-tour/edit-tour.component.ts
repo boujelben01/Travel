@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TourService } from 'src/app/core/services/tour.service';
-import { Tour } from 'src/app/core/models/tour.model';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-tour',
@@ -10,46 +9,47 @@ import { Tour } from 'src/app/core/models/tour.model';
   styleUrls: ['./edit-tour.component.css']
 })
 export class EditTourComponent implements OnInit {
-  tourForm: FormGroup;
-  tourId!: number;
+  tourForm!: FormGroup;
+  selectedImage: string = '';
 
   constructor(
     private fb: FormBuilder,
     private tourService: TourService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {
+    private dialogRef: MatDialogRef<EditTourComponent>,
+    @Inject(MAT_DIALOG_DATA) public tourData: any
+  ) {}
+
+  ngOnInit(): void {
     this.tourForm = this.fb.group({
-      title: ['', Validators.required],
-      country: ['', Validators.required],
-      price: [0, [Validators.required, Validators.min(1)]],
-      description: [''],
-      accommodation: ['Hotel', Validators.required],
-      image: ['assets/images/default.jpg'],
-      duration: [1, [Validators.required, Validators.min(1)]],
-      continent: ['Europe', Validators.required]
+      title: [this.tourData.title, Validators.required],
+      country: [this.tourData.country, Validators.required],
+      continent: [this.tourData.continent, Validators.required],
+      price: [this.tourData.price, [Validators.required, Validators.min(1)]],
+      duration: [this.tourData.duration, [Validators.required, Validators.min(1)]],
+      accommodation: [this.tourData.accommodation, Validators.required],
+      image: [this.tourData.image],
+      description: [this.tourData.description]
     });
   }
 
-  ngOnInit(): void {
-    this.tourId = +this.route.snapshot.paramMap.get('id')!;
-    this.tourService.getTours().subscribe((tours) => {
-      const tour = tours.find((t) => t.id === this.tourId);
-      if (tour) {
-        this.tourForm.patchValue(tour);
-      }
-    });
+  onImageSelected(event: any): void {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.selectedImage = reader.result as string;
+        this.tourForm.patchValue({ image: this.selectedImage });
+      };
+      reader.readAsDataURL(file);
+    }
   }
 
   updateTour(): void {
     if (this.tourForm.valid) {
-      const updatedTour: Tour = { id: this.tourId, ...this.tourForm.value };
-      this.tourService.updateTour(updatedTour).subscribe({
-        next: () => {
-          console.log('Tour modifié avec succès');
-          this.router.navigate(['/admin/tours']); // Redirige vers la liste des tours
-        },
-        error: (err) => console.error('Erreur lors de la modification du tour :', err)
+      const updatedTour = { ...this.tourForm.value, id: this.tourData.id };
+      this.tourService.updateTour(updatedTour).subscribe(() => {
+        console.log('Tour mis à jour avec succès');
+        this.dialogRef.close('refresh');
       });
     }
   }
