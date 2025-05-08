@@ -13,6 +13,7 @@ import { ReservationSummaryComponent } from './pages/reservation-summary/reserva
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { MatListModule } from '@angular/material/list';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -64,7 +65,8 @@ import { MatCardModule } from '@angular/material/card';
     MatSelectModule,
     MatCardModule,
     AngularFireModule.initializeApp(firebaseConfig), // ✅ Init firebase compat
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@
       "name": "Europe",
       "countries": [
         "France",
-        "Italy",
+        "Italie",
         "Spain"
       ],
       "id": "d390"
@@ -54,8 +54,13 @@
       "price": 980,
       "image": "assets/images/paris.jpg",
       "duration": 5,
-      "accommodation": "Maison",
-      "description": "Un séjour romantique au cœur de Paris."
+      "accommodationId": 1,
+      "description": "Un séjour romantique au cœur de Paris.",
+      "itinerary": [
+        "Arrivée à Paris, croisière sur la Seine, dîner romantique.",
+        "Visite de la Tour Eiffel et du Louvre, shopping dans les Champs-Élysées.",
+        "Brunch dans un café parisien, promenade au Jardin du Luxembourg, départ."
+      ]
     },
     {
       "id": "3",
@@ -65,8 +70,16 @@
       "price": 1500,
       "image": "assets/images/safari.jpg",
       "duration": 6,
-      "accommodation": "Camping",
-      "description": "Safari à la rencontre des Big Five en Afrique."
+      "accommodationId": 2,
+      "description": "Safari à la rencontre des Big Five en Afrique.",
+      "itinerary": [
+        "Arrivée à Nairobi, installation au Safari Lodge, dîner traditionnel africain.",
+        "Safari matinal dans le parc national Masai Mara, observation des Big Five.",
+        "Visite d'un village Masaï, découverte de la culture locale.",
+        "Safari en 4x4 au lever du soleil, déjeuner au camp, temps libre en nature.",
+        "Balade guidée dans la savane, photographie animalière, soirée au coin du feu.",
+        "Dernier petit-déjeuner au lodge, détente et transfert à l’aéroport pour le départ."
+      ]
     },
     {
       "id": "4",
@@ -76,8 +89,17 @@
       "price": 1100,
       "image": "assets/images/matchu.jpg",
       "duration": 7,
-      "accommodation": "Hotel",
-      "description": "Découvrez la cité sacrée des Incas au sommet des Andes."
+      "accommodationId": 10,
+      "description": "Découvrez la cité sacrée des Incas au sommet des Andes.",
+      "itinerary": [
+        "Arrivée à Cusco, installation au lodge, promenade dans le centre historique.",
+        "Découverte de la vallée sacrée des Incas, visite du marché traditionnel de Pisac.",
+        "Excursion aux ruines d’Ollantaytambo, nuit dans la vallée sacrée.",
+        "Départ en train panoramique vers Aguas Calientes, détente dans les bains thermaux.",
+        "Ascension matinale du Machu Picchu avec guide, exploration de la cité perdue.",
+        "Retour à Cusco, visite du temple du Soleil (Qorikancha) et soirée culturelle.",
+        "Dernier petit-déjeuner andin, temps libre pour achats souvenirs, transfert à l'aéroport."
+      ]
     },
     {
       "id": "5",
@@ -87,19 +109,41 @@
       "price": 850,
       "image": "assets/images/thailand.jpg",
       "duration": 8,
-      "accommodation": "Auberge",
-      "description": "Un mélange de temples, plages et marchés flottants."
+      "accommodationId": 5,
+      "description": "Un mélange de temples, plages et marchés flottants.",
+      "itinerary": [
+        "Arrivée à Bangkok, installation à l'hôtel en bord de fleuve, dîner thaïlandais au marché de nuit.",
+        "Visite du Grand Palais et du temple Wat Pho, balade en bateau sur les khlongs.",
+        "Journée à Ayutthaya, ancienne capitale royale, découverte des temples en ruine.",
+        "Transfert à Chiang Mai, installation et promenade dans la vieille ville.",
+        "Visite du temple Wat Phra That Doi Suthep et marché artisanal local.",
+        "Journée nature : sanctuaire des éléphants, interaction éthique et déjeuner végétarien.",
+        "Vol vers Phuket, détente sur la plage, coucher de soleil sur la mer d’Andaman.",
+        "Dernier petit-déjeuner tropical, temps libre pour shopping, transfert vers l’aéroport."
+      ]
     },
     {
       "id": "6",
-      "title": "Croisière Méditerranéenne",
-      "country": "Italy",
+      "title": "Trésors d'Italie",
+      "country": "Italie",
       "continent": "Europe",
       "price": 1400,
-      "image": "assets/images/italy.jpg",
+      "image": "assets/images/italie.jpg",
       "duration": 10,
-      "accommodation": "Bateau",
-      "description": "Explorez Rome, Barcelone et Athènes en croisière."
+      "accommodationId": 6,
+      "description": "Un voyage inoubliable à travers Rome, Florence et Venise pour découvrir l'art, la gastronomie et l'histoire italienne.",
+      "itinerary": [
+        "Arrivée à Rome, installation à l'hôtel, promenade dans le quartier du Trastevere.",
+        "Visite du Colisée, du Forum Romain et de la Fontaine de Trevi.",
+        "Exploration du Vatican, basilique Saint-Pierre et chapelle Sixtine.",
+        "Train vers Florence, visite du Duomo et de la Galerie des Offices.",
+        "Balade dans les rues médiévales de Florence, dégustation de vin toscan.",
+        "Excursion à Pise pour voir la célèbre tour penchée et retour à Florence.",
+        "Départ pour Venise, installation en bord de canal et promenade en gondole.",
+        "Découverte de la place Saint-Marc, du Palais des Doges et du pont des Soupirs.",
+        "Excursion aux îles de Murano et Burano, artisanat local et maisons colorées.",
+        "Dernier café italien sur le Grand Canal, achats souvenirs et retour."
+      ]
     },
     {
       "id": "7",
@@ -107,10 +151,24 @@
       "country": "Australia",
       "continent": "Australia",
       "price": 1600,
-      "image": "assets/images/australia.jpg",
+      "image": "assets/images/roadtrip.jpg",
       "duration": 12,
-      "accommodation": "Camping",
-      "description": "Partez à l'aventure entre désert rouge et plages sauvages."
+      "accommodationId": 7,
+      "description": "Partez à l'aventure entre désert rouge et plages sauvages.",
+      "itinerary": [
+        "Arrivée à Sydney, installation en centre-ville, balade au bord de l’Opéra et dîner au Darling Harbour.",
+        "Ascension du Sydney Harbour Bridge et visite du quartier historique des Rocks.",
+        "Vol intérieur vers Alice Springs, installation au camp, soirée autour du feu dans le bush.",
+        "Excursion dans le désert rouge jusqu'à Kings Canyon, randonnée panoramique.",
+        "Visite du site sacré d'Uluru (Ayers Rock) au lever du soleil, découverte culturelle aborigène.",
+        "Transfert vers Cairns, installation en bord de mer et temps libre.",
+        "Journée sur la Grande Barrière de Corail : snorkeling ou plongée au programme.",
+        "Exploration de la forêt tropicale de Daintree, balade guidée et cascade.",
+        "Vol retour à Sydney, après-midi shopping dans le centre-ville.",
+        "Excursion à Bondi Beach, surf ou détente sur le sable blanc.",
+        "Visite du zoo de Taronga avec vue panoramique sur la baie de Sydney.",
+        "Dernier petit-déjeuner australien, temps libre puis transfert à l'aéroport."
+      ]
     },
     {
       "id": "8",
@@ -120,8 +178,16 @@
       "price": 1350,
       "image": "assets/images/norway.jpg",
       "duration": 6,
-      "accommodation": "Maison",
-      "description": "Voyagez au cœur des fjords norvégiens majestueux."
+      "accommodationId": 8,
+      "description": "Voyagez au cœur des fjords norvégiens majestueux.",
+      "itinerary": [
+        "Arrivée à Bergen, installation dans un chalet traditionnel, promenade dans le vieux port de Bryggen.",
+        "Croisière dans les fjords avec vues spectaculaires sur les cascades et montagnes.",
+        "Excursion guidée sur la route des Trolls, arrêts photos panoramiques et nature sauvage.",
+        "Visite du glacier Folgefonna et randonnée encadrée dans les environs.",
+        "Journée détente au bord d'un fjord : kayak, baignade pour les plus courageux et pique-nique norvégien.",
+        "Derniers achats de souvenirs nordiques à Bergen et transfert vers l'aéroport."
+      ]
     },
     {
       "id": "9",
@@ -129,120 +195,16 @@
       "country": "USA",
       "continent": "America",
       "price": 890,
-      "image": "assets/images/nyc.jpg",
+      "image": "assets/images/manhaten_hotel.jpg",
       "duration": 4,
-      "accommodation": "Hotel",
-      "description": "Visitez la Big Apple en un clin d'œil."
-    },
-    {
-      "id": "10",
-      "title": "Trésors du Maroc",
-      "country": "Morocco",
-      "continent": "Africa",
-      "price": 920,
-      "image": "assets/images/morocco.jpg",
-      "duration": 5,
-      "accommodation": "Maison",
-      "description": "Entre dunes du Sahara et souks animés de Marrakech."
-    },
-    {
-      "id": "11",
-      "title": "Charme de la Nouvelle-Zélande",
-      "country": "New Zealand",
-      "continent": "Australia",
-      "price": 1700,
-      "image": "assets/images/newzealand.jpg",
-      "duration": 10,
-      "accommodation": "Hotel",
-      "description": "Découvrez les paysages de la Terre du Milieu."
-    },
-    {
-      "id": "12",
-      "title": "Beauté du Vietnam",
-      "country": "Vietnam",
-      "continent": "Asia",
-      "price": 780,
-      "image": "assets/images/vietnam.jpg",
-      "duration": 7,
-      "accommodation": "Maison",
-      "description": "Des rizières aux grottes karstiques, une immersion unique."
-    },
-    {
-      "id": "13",
-      "title": "Week-end à Barcelone",
-      "country": "Spain",
-      "continent": "Europe",
-      "price": 600,
-      "image": "assets/images/barcelona.jpg",
-      "duration": 3,
-      "accommodation": "Hotel",
-      "description": "Art, plage et tapas au programme."
-    },
-    {
-      "id": "14",
-      "title": "Expédition en Afrique du Sud",
-      "country": "South Africa",
-      "continent": "Africa",
-      "price": 1350,
-      "image": "assets/images/south-africa.jpg",
-      "duration": 7,
-      "accommodation": "Camping",
-      "description": "Observation des baleines et randonnées dans la nature."
-    },
-    {
-      "id": "15",
-      "title": "Grande Muraille et Pékin",
-      "country": "China",
-      "continent": "Asia",
-      "price": 1250,
-      "image": "assets/images/china.jpg",
-      "duration": 6,
-      "accommodation": "Hotel",
-      "description": "Explorez les trésors de la Chine impériale."
-    },
-    {
-      "id": "16",
-      "title": "Îles grecques en liberté",
-      "country": "Greece",
-      "continent": "Europe",
-      "price": 980,
-      "image": "assets/images/greece.jpg",
-      "duration": 6,
-      "accommodation": "Maison",
-      "description": "Détente entre Santorin et Mykonos."
-    },
-    {
-      "id": "17",
-      "title": "Évasion au Canada",
-      "country": "Canada",
-      "continent": "America",
-      "price": 1450,
-      "image": "assets/images/canada.jpg",
-      "duration": 8,
-      "accommodation": "Hotel",
-      "description": "Entre lacs, forêts et villes francophones."
-    },
-    {
-      "id": "18",
-      "title": "Tokyo Futuriste",
-      "country": "Japan",
-      "continent": "Asia",
-      "price": 1300,
-      "image": "assets/images/tokyo.jpg",
-      "duration": 5,
-      "accommodation": "Hotel",
-      "description": "Plongez dans l'effervescence urbaine japonaise."
-    },
-    {
-      "title": "dream tour",
-      "country": "cairo",
-      "continent": "Africa",
-      "price": 1550,
-      "image":"",
-      "duration": 8,
-      "accommodation": "Hotel",
-      "description": "",
-      "id": "7254"
+      "accommodationId": 9,
+      "description": "Visitez la Statue de la Liberté en un clin d'œil.",
+      "itinerary": [
+        "Arrivée à New York, installation à Manhattan, balade à Times Square et dîner dans un diner typique.",
+        "Visite de la Statue de la Liberté et Ellis Island, promenade sur le pont de Brooklyn.",
+        "Matinée au musée d'Histoire Naturelle, après-midi shopping sur la 5e Avenue, spectacle à Broadway en soirée.",
+        "Dernier café dans Central Park, flânerie dans les rues de SoHo, puis transfert vers l’aéroport."
+      ]
     }
   ],
   "accommodations": [
@@ -254,33 +216,333 @@
       "city": "Paris",
       "pricePerNight": 120,
       "stars": 4,
-      "image": "assets/images/louvre.jpg",
+      "image": "assets/images/hotellouvre.jpg",
       "availableFrom": "2025-05-10",
       "availableTo": "2025-12-31"
     },
     {
       "id": "2",
-      "country": "France",
-      "name": "Maison de Provence",
-      "type": "Maison",
-      "city": "Avignon",
-      "pricePerNight": 90,
+      "country": "Kenya",
+      "name": "Safari Lodge",
+      "type": "Camping",
+      "city": "Nairobi",
+      "pricePerNight": 80,
       "stars": 3,
-      "image": "assets/images/provence.jpg",
-      "availableFrom": "2025-06-01",
-      "availableTo": "2025-09-30"
+      "image": "assets/images/safari.jpg",
+      "availableFrom": "2025-01-01",
+      "availableTo": "2025-12-31"
     },
     {
       "id": "3",
-      "country": "Japon",
+      "country": "Japan",
       "name": "Kyoto Ryokan",
-      "type": "Ryokan",
+      "type": "Maison",
       "city": "Kyoto",
       "pricePerNight": 150,
       "stars": 5,
-      "image": "assets/images/kyoto.jpg",
+      "image": "assets/images/japan.jpg",
       "availableFrom": "2025-04-01",
       "availableTo": "2025-11-15"
+    },
+    {
+      "id": "5",
+      "country": "Thailand",
+      "name": "Bangkok Riverside",
+      "type": "Hotel",
+      "city": "Bangkok",
+      "pricePerNight": 95,
+      "stars": 4,
+      "image": "assets/images/bankok.jpg",
+      "availableFrom": "2025-01-15",
+      "availableTo": "2025-12-15"
+    },
+    {
+      "id": "6",
+      "country": "Italie",
+      "name": "Roma Marina",
+      "type": "Hotel",
+      "city": "Rome",
+      "pricePerNight": 130,
+      "stars": 4,
+      "image": "assets/images/roma_hotel.jpg",
+      "availableFrom": "2025-03-01",
+      "availableTo": "2025-10-30"
+    },
+    {
+      "id": "7",
+      "country": "Australia",
+      "name": "Outback Camp",
+      "type": "Camping",
+      "city": "Alice Springs",
+      "pricePerNight": 75,
+      "stars": 3,
+      "image": "assets/images/autriacamp.jpg",
+      "availableFrom": "2025-02-01",
+      "availableTo": "2025-11-30"
+    },
+    {
+      "id": "8",
+      "country": "Norway",
+      "name": "Fjord Cabins",
+      "type": "Maison",
+      "city": "Bergen",
+      "pricePerNight": 110,
+      "stars": 4,
+      "image": "assets/images/norway_cabin.jpg",
+      "availableFrom": "2025-04-01",
+      "availableTo": "2025-10-01"
+    },
+    {
+      "id": "9",
+      "country": "USA",
+      "name": "Manhattan Hotel",
+      "type": "Hotel",
+      "city": "New York",
+      "pricePerNight": 200,
+      "stars": 5,
+      "image": "assets/images/manhaten_hotel.jpg",
+      "availableFrom": "2025-01-01",
+      "availableTo": "2025-12-31"
+    },
+    {
+      "id": "10",
+      "country": "Peru",
+      "name": "Cusco Lodge",
+      "type": "Maison",
+      "city": "Cusco",
+      "pricePerNight": 70,
+      "stars": 3,
+      "image": "assets/images/cusco.jpg",
+      "availableFrom": "2025-03-01",
+      "availableTo": "2025-12-01"
+    },
+    {
+      "id": "11",
+      "country": "Morocco",
+      "name": "Riad Marrakech",
+      "type": "Maison",
+      "city": "Marrakech",
+      "pricePerNight": 65,
+      "stars": 3,
+      "image": "assets/images/marrakech_maison.jpg",
+      "availableFrom": "2025-04-01",
+      "availableTo": "2025-12-31"
+    },
+    {
+      "id": "12",
+      "country": "France",
+      "name": "Château Versailles",
+      "type": "Maison",
+      "city": "Versailles",
+      "pricePerNight": 140,
+      "stars": 5,
+      "image": "assets/images/versaille.jpg",
+      "availableFrom": "2025-05-10",
+      "availableTo": "2025-12-31"
+    },
+    {
+      "id": "13",
+      "country": "Spain",
+      "name": "Barcelona Beach Hotel",
+      "type": "Hotel",
+      "city": "Barcelona",
+      "pricePerNight": 120,
+      "stars": 4,
+      "image": "assets/images/barcelon_hotel.jpeg",
+      "availableFrom": "2025-06-01",
+      "availableTo": "2025-12-31"
+    },
+    {
+      "id": "14",
+      "country": "Italie",
+      "name": "Venice Grand Canal Hotel",
+      "type": "Hotel",
+      "city": "Venice",
+      "pricePerNight": 180,
+      "stars": 5,
+      "image": "assets/images/venice.jpg",
+      "availableFrom": "2025-05-01",
+      "availableTo": "2025-12-31"
+    },
+    {
+      "id": "15",
+      "country": "Canada",
+      "name": "Montreal Downtown Inn",
+      "type": "Hotel",
+      "city": "Montreal",
+      "pricePerNight": 110,
+      "stars": 4,
+      "image": "assets/images/Montrea_Dow.jpg",
+      "availableFrom": "2025-05-01",
+      "availableTo": "2025-12-31"
+    },
+    {
+      "id": "16",
+      "country": "New Zealand",
+      "name": "Queenstown Lakeview Lodge",
+      "type": "Maison",
+      "city": "Queenstown",
+      "pricePerNight": 150,
+      "stars": 5,
+      "image": "assets/images/newzealandhome.jpg",
+      "availableFrom": "2025-04-15",
+      "availableTo": "2025-12-01"
+    },
+    {
+      "id": "17",
+      "country": "Vietnam",
+      "name": "Hanoi Old Quarter Hotel",
+      "type": "Hotel",
+      "city": "Hanoi",
+      "pricePerNight": 85,
+      "stars": 3,
+      "image": "assets/images/hotels-in-hanoi-old-quarter-1.jpg",
+      "availableFrom": "2025-03-10",
+      "availableTo": "2025-12-20"
+    },
+    {
+      "id": "18",
+      "country": "Brazil",
+      "name": "Rio Beach House",
+      "type": "Maison",
+      "city": "Rio de Janeiro",
+      "pricePerNight": 130,
+      "stars": 4,
+      "image": "assets/images/riobeach.jpg",
+      "availableFrom": "2025-06-01",
+      "availableTo": "2025-12-31"
+    },
+    {
+      "id": "19",
+      "country": "South Africa",
+      "name": "Cape Town Mountain View",
+      "type": "Hotel",
+      "city": "Cape Town",
+      "pricePerNight": 120,
+      "stars": 4,
+      "image": "assets/images/capetown.jpg",
+      "availableFrom": "2025-02-15",
+      "availableTo": "2025-11-30"
+    },
+    {
+      "id": "20",
+      "country": "Thailand",
+      "name": "Chiang Mai Nature Lodge",
+      "type": "Maison",
+      "city": "Chiang Mai",
+      "pricePerNight": 90,
+      "stars": 4,
+      "image": "assets/images/thailandhouse.jpg",
+      "availableFrom": "2025-01-20",
+      "availableTo": "2025-11-30"
+    },
+    {
+      "id": "21",
+      "country": "New Zealand",
+      "name": "Rotorua Thermal Springs Retreat",
+      "type": "Maison",
+      "city": "Rotorua",
+      "pricePerNight": 135,
+      "stars": 4,
+      "image": "assets/images/hotwater.jpg",
+      "availableFrom": "2025-04-01",
+      "availableTo": "2025-12-15"
+    },
+    {
+      "id": "22",
+      "country": "Vietnam",
+      "name": "Hoi An Riverside Hotel",
+      "type": "Hotel",
+      "city": "Hoi An",
+      "pricePerNight": 80,
+      "stars": 3,
+      "image": "assets/images/vitnamehotel.jpg",
+      "availableFrom": "2025-03-15",
+      "availableTo": "2025-12-01"
+    },
+    {
+      "id": "23",
+      "country": "Brazil",
+      "name": "Amazon Jungle Eco-Lodge",
+      "type": "Camping",
+      "city": "Manaus",
+      "pricePerNight": 100,
+      "stars": 3,
+      "image": "assets/images/brezilCamp.jpg",
+      "availableFrom": "2025-05-01",
+      "availableTo": "2025-11-30"
+    },
+    {
+      "id": "24",
+      "country": "Canada",
+      "name": "Banff Mountain Inn",
+      "type": "Hotel",
+      "city": "Banff",
+      "pricePerNight": 125,
+      "stars": 4,
+      "image": "assets/images/hotelcanada.jpg",
+      "availableFrom": "2025-06-01",
+      "availableTo": "2025-10-15"
+    },
+    {
+      "id": "25",
+      "country": "Australia",
+      "name": "Tasmania Nature Camp",
+      "type": "Camping",
+      "city": "Hobart",
+      "pricePerNight": 70,
+      "stars": 3,
+      "image": "assets/images/autralia_camp.jpg",
+      "availableFrom": "2025-02-10",
+      "availableTo": "2025-12-10"
+    },
+    {
+      "id": "26",
+      "country": "South Africa",
+      "name": "Kruger Safari Tents",
+      "type": "Camping",
+      "city": "Kruger Park",
+      "pricePerNight": 85,
+      "stars": 3,
+      "image": "assets/images/southcamp.jpg",
+      "availableFrom": "2025-04-01",
+      "availableTo": "2025-11-30"
+    },
+    {
+      "id": "27",
+      "country": "Japan",
+      "name": "Tokyo Sky Capsule Hotel",
+      "type": "Hotel",
+      "city": "Tokyo",
+      "pricePerNight": 65,
+      "stars": 3,
+      "image": "assets/images/capsul.jpg",
+      "availableFrom": "2025-05-01",
+      "availableTo": "2025-12-31"
+    },
+    {
+      "id": "28",
+      "country": "Spain",
+      "name": "Madrid City Loft",
+      "type": "Maison",
+      "city": "Madrid",
+      "pricePerNight": 115,
+      "stars": 4,
+      "image": "assets/images/mardid.jpg",
+      "availableFrom": "2025-06-10",
+      "availableTo": "2025-12-31"
+    },
+    {
+      "id": "29",
+      "country": "USA",
+      "name": "Yellowstone Cabin Retreat",
+      "type": "Maison",
+      "city": "Wyoming",
+      "pricePerNight": 140,
+      "stars": 4,
+      "image": "assets/images/yello.jpg",
+      "availableFrom": "2025-05-15",
+      "availableTo": "2025-10-30"
     }
   ],
   "users": [
@@ -310,6 +572,167 @@
       "id": "5725",
       "email": "sousou@gmail.com",
       "name": "sousou"
+    },
+    {
+      "id": "a3cd",
+      "email": "slouma@gmail.com",
+      "name": "slouma"
+    }
+  ],
+  "reservations": [
+    {
+      "id": "8d59",
+      "continent": "Europe",
+      "country": "France",
+      "date1": "2025-05-10T23:00:00.000Z",
+      "date2": "2025-05-12T23:00:00.000Z",
+      "persons": 3,
+      "accommodation": {
+        "id": 12,
+        "country": "France",
+        "name": "Château Versailles",
+        "type": "Maison",
+        "city": "Versailles",
+        "pricePerNight": 140,
+        "stars": 5,
+        "image": "assets/images/versailles.jpg",
+        "availableFrom": "2025-05-10",
+        "availableTo": "2025-12-31"
+      }
+    },
+    {
+      "id": "16b3",
+      "continent": "Australia",
+      "country": "New Zealand",
+      "date1": "2025-05-06T23:00:00.000Z",
+      "date2": "2025-05-08T23:00:00.000Z",
+      "persons": 2,
+      "accommodation": {
+        "id": "16",
+        "country": "New Zealand",
+        "name": "Queenstown Lakeview Lodge",
+        "type": "Maison",
+        "city": "Queenstown",
+        "pricePerNight": 150,
+        "stars": 5,
+        "image": "assets/images/newzealandhome.jpg",
+        "availableFrom": "2025-04-15",
+        "availableTo": "2025-12-01",
+        "isAvailable": true
+      }
+    },
+    {
+      "id": "23c4",
+      "continent": "Australia",
+      "country": "New Zealand",
+      "date1": "2025-05-06T23:00:00.000Z",
+      "date2": "2025-05-08T23:00:00.000Z",
+      "persons": 2,
+      "accommodation": {
+        "id": "16",
+        "country": "New Zealand",
+        "name": "Queenstown Lakeview Lodge",
+        "type": "Maison",
+        "city": "Queenstown",
+        "pricePerNight": 150,
+        "stars": 5,
+        "image": "assets/images/newzealandhome.jpg",
+        "availableFrom": "2025-04-15",
+        "availableTo": "2025-12-01",
+        "isAvailable": true
+      }
+    },
+    {
+      "id": "14bb",
+      "source": "planner",
+      "continent": "America",
+      "country": "USA",
+      "date1": "",
+      "date2": "",
+      "persons": 1,
+      "accommodation": {
+        "id": "29",
+        "country": "USA",
+        "name": "Yellowstone Cabin Retreat",
+        "type": "Maison",
+        "city": "Wyoming",
+        "pricePerNight": 140,
+        "stars": 4,
+        "image": "assets/images/yello.jpg",
+        "availableFrom": "2025-05-15",
+        "availableTo": "2025-10-30"
+      }
+    },
+    {
+      "id": "60e9",
+      "source": "tour",
+      "tourId": "2",
+      "tour": {
+        "id": "2",
+        "title": "Romance à Paris",
+        "country": "France",
+        "continent": "Europe",
+        "price": 980,
+        "image": "assets/images/paris.jpg",
+        "duration": 5,
+        "accommodationId": 1,
+        "description": "Un séjour romantique au cœur de Paris.",
+        "itinerary": [
+          "Arrivée à Paris, croisière sur la Seine, dîner romantique.",
+          "Visite de la Tour Eiffel et du Louvre, shopping dans les Champs-Élysées.",
+          "Brunch dans un café parisien, promenade au Jardin du Luxembourg, départ."
+        ]
+      },
+      "accommodation": {
+        "id": "1",
+        "country": "France",
+        "name": "Hôtel du Louvre",
+        "type": "Hotel",
+        "city": "Paris",
+        "pricePerNight": 120,
+        "stars": 4,
+        "image": "assets/images/hotellouvre.jpg",
+        "availableFrom": "2025-05-10",
+        "availableTo": "2025-12-31"
+      }
+    },
+    {
+      "id": "4679",
+      "source": "tour",
+      "tourId": "5",
+      "tour": {
+        "id": "5",
+        "title": "Aventures en Thaïlande",
+        "country": "Thailand",
+        "continent": "Asia",
+        "price": 850,
+        "image": "assets/images/thailand.jpg",
+        "duration": 8,
+        "accommodationId": 5,
+        "description": "Un mélange de temples, plages et marchés flottants.",
+        "itinerary": [
+          "Arrivée à Bangkok, installation à l'hôtel en bord de fleuve, dîner thaïlandais au marché de nuit.",
+          "Visite du Grand Palais et du temple Wat Pho, balade en bateau sur les khlongs.",
+          "Journée à Ayutthaya, ancienne capitale royale, découverte des temples en ruine.",
+          "Transfert à Chiang Mai, installation et promenade dans la vieille ville.",
+          "Visite du temple Wat Phra That Doi Suthep et marché artisanal local.",
+          "Journée nature : sanctuaire des éléphants, interaction éthique et déjeuner végétarien.",
+          "Vol vers Phuket, détente sur la plage, coucher de soleil sur la mer d’Andaman.",
+          "Dernier petit-déjeuner tropical, temps libre pour shopping, transfert vers l’aéroport."
+        ]
+      },
+      "accommodation": {
+        "id": "5",
+        "country": "Thailand",
+        "name": "Bangkok Riverside",
+        "type": "Hotel",
+        "city": "Bangkok",
+        "pricePerNight": 95,
+        "stars": 4,
+        "image": "assets/images/bankok.jpg",
+        "availableFrom": "2025-01-15",
+        "availableTo": "2025-12-15"
+      }
     }
   ]
 }

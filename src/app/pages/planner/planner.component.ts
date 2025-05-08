@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccommodationService } from 'src/app/core/services/accommodation.service';
+import { ContinentService } from 'src/app/core/services/continent.service';
 import { Accommodation } from 'src/app/core/models/accommodation.model';
 
 @Component({
@@ -18,84 +19,73 @@ export class PlannerComponent implements OnInit {
   };
 
   minDate: Date = new Date();
-  continents = [
-    { name: 'Europe', countries: ['France', 'Italie', 'Espagne'] },
-    { name: 'Asie', countries: ['Japon', 'Thaïlande', 'Vietnam'] },
-    { name: 'Afrique', countries: ['Maroc', 'Kenya', 'Afrique du Sud'] },
-    { name: 'Amérique', countries: ['USA', 'Brésil', 'Canada'] },
-    { name: 'Océanie', countries: ['Australie', 'Nouvelle-Zélande'] }
-  ];
-
+  continents: any[] = [];
   countries: string[] = [];
   accommodations: Accommodation[] = [];
 
   constructor(
     private accommodationService: AccommodationService,
+    private continentService: ContinentService,
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
-
-  onContinentChange(continentName: string): void {
-    const continent = this.continents.find(c => c.name === continentName);
-    this.countries = continent ? continent.countries : [];
-    this.accommodations = []; // Réinitialiser les hébergements
-  }
-
-  onCountryChange(country: string): void {
-    if (country && this.formData.date1 && this.formData.date2) {
-      this.filterAccommodations(country);
-    } else {
-      this.accommodations = []; // Réinitialiser si les critères ne sont pas remplis
-    }
-  }
-
-  filterAccommodations(country: string): void {
-    const d1 = new Date(this.formData.date1);
-    const d2 = new Date(this.formData.date2);
-
-    if (d1 > d2) {
-      console.error('La date de début doit être antérieure à la date de fin.');
-      return;
-    }
-
-    this.accommodationService.getByCountry(country).subscribe({
+  ngOnInit(): void {
+    this.continentService.getContinents().subscribe({
       next: (data) => {
-        this.accommodations = data.filter(acc => {
-          const from = new Date(acc.availableFrom || '');
-          const to = new Date(acc.availableTo || '');
-          return d1 >= from && d2 <= to;
-        });
+        this.continents = data;
       },
       error: (err) => {
-        console.error('Erreur lors de la récupération des hébergements :', err);
+        console.error('Erreur lors du chargement des continents :', err);
       }
     });
   }
 
-  // submitPlan(): void {
-  //   if (!this.formData.date1 || !this.formData.date2 || !this.formData.country) {
-  //     console.error('Veuillez remplir tous les champs obligatoires.');
-  //     return;
-  //   }
+  onContinentChange(continentName: string): void {
+    const continent = this.continents.find(c => c.name === continentName);
+    this.countries = continent ? continent.countries : [];
+    this.accommodations = [];
+  }
 
-  //   sessionStorage.setItem('reservation', JSON.stringify(this.formData));
-  //   this.router.navigate(['/reservation-summary']);
-  // }
+  onCountryChange(country: string): void {
+    if (country) {
+      this.accommodationService.getByCountry(country).subscribe({
+        next: (data) => {
+          this.accommodations = data;
+          this.filterAvailability();
+        },
+        error: (err) => {
+          console.error('Erreur lors de la récupération des hébergements :', err);
+        }
+      });
+    } else {
+      this.accommodations = [];
+    }
+  }
 
-  /** Nouvelle méthode pour réserver un hébergement */
+  filterAvailability(): void {
+    if (!this.formData.date1 || !this.formData.date2) return;
+
+    const d1 = new Date(this.formData.date1);
+    const d2 = new Date(this.formData.date2);
+
+    this.accommodations = this.accommodations.filter(acc => {
+      const from = new Date(acc.availableFrom || '');
+      const to = new Date(acc.availableTo || '');
+      return d1 >= from && d2 <= to;
+    });
+  }
+
   reserveAccommodation(acc: Accommodation): void {
-    // Compose l'objet de réservation complet
     const reservation = {
-      ...this.formData,
+      source: 'planner',
+      continent: this.formData.continent,
+      country: this.formData.country,
+      date1: this.formData.date1,
+      date2: this.formData.date2,
+      persons: this.formData.persons,
       accommodation: acc
     };
-
-    // Stocke la réservation dans sessionStorage
-    sessionStorage.setItem('reservation', JSON.stringify(reservation));
-
-    // Redirige vers la page de résumé
+    sessionStorage.setItem('plannerReservation', JSON.stringify(reservation));
     this.router.navigate(['/reservation-summary']);
   }
 }
-  

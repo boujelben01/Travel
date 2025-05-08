@@ -14,4 +14,9 @@ export class AccommodationService {
   getByCountry(country: string): Observable<Accommodation[]> {
     return this.http.get<Accommodation[]>(`${this.apiUrl}?country=${country}`);
   }
+
+  getAll(): Observable<Accommodation[]> {
+    return this.http.get<Accommodation[]>(this.apiUrl);
+  }
+  
 }

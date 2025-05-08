@@ -22,11 +22,10 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Hébergement</mat-label>
-    <mat-select formControlName="accommodation">
-      <mat-option value="Hotel">Hotel</mat-option>
-      <mat-option value="Maison">Maison</mat-option>
-      <mat-option value="Auberge">Auberge</mat-option>
-      <mat-option value="Camping">Camping</mat-option>
+    <mat-select formControlName="accommodationId">
+      <mat-option *ngFor="let accommodation of accommodations" [value]="accommodation.id">
+        {{ accommodation.name }} ({{ accommodation.type }})
+      </mat-option>
     </mat-select>
   </mat-form-field>
 

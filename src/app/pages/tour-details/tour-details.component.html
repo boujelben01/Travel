@@ -1,32 +1,38 @@
-<!-- tour-details.component.html -->
-<div class="tour-details-container" *ngIf="tour">
+<div class="tour-details-container" *ngIf="tour && accommodation">
+  <!-- Card Planning -->
+  <div class="card-columns">
+    <mat-card class="planning-card" *ngIf="tour.itinerary?.length">
+      <mat-card-title>🗓️ Planning du tour</mat-card-title>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngFor="let day of tour.itinerary; let i = index">
+            <strong>Jour {{ i + 1 }} :</strong> {{ day }}
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="card-columns">
+    <!-- Card Détails Tour -->
     <mat-card class="tour-details-card">
       <img mat-card-image [src]="tour.image" alt="Image du tour" />
       <mat-card-header>
         <mat-card-title>{{ tour.title }}</mat-card-title>
         <mat-card-subtitle>{{ tour.country }} - {{ tour.continent }}</mat-card-subtitle>
       </mat-card-header>
-  
       <mat-card-content>
         <p class="description">{{ tour.description }}</p>
         <ul class="details-list">
-          <li><mat-icon>place</mat-icon> Destination: {{ tour.country }}, {{ tour.continent }}</li>
-          <li><mat-icon>hotel</mat-icon> Hébergement: {{ tour.accommodation }}</li>
-          <li><mat-icon>schedule</mat-icon> Durée: {{ tour.duration }} jours</li>
-          <li><mat-icon>attach_money</mat-icon> Prix: {{ tour.price }} €</li>
+          <li><mat-icon>place</mat-icon> {{ tour.country }}, {{ tour.continent }}</li>
+          <li><mat-icon>hotel</mat-icon> {{ accommodation.name }} ({{ accommodation.type }})</li>
+          <li><mat-icon>schedule</mat-icon> {{ tour.duration }} jours</li>
+          <li><mat-icon>attach_money</mat-icon> {{ tour.price }} €</li>
         </ul>
       </mat-card-content>
-  
       <mat-card-actions class="actions">
-        <button mat-raised-button color="accent" [routerLink]="['/reservation-summary']">
-            Réserver maintenant
-          </button>
-          
+        <button mat-raised-button color="accent" (click)="reserveTour()">Réserver</button>
       </mat-card-actions>
     </mat-card>
   </div>
-  
-  <div *ngIf="!tour">
-    <p>Chargement des détails...</p>
-  </div>
-  
+    
+</div>

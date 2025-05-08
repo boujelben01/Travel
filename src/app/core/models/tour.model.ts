@@ -1,11 +1,13 @@
+
 export interface Tour {
   id: number;
   title: string;
   country: string;
   price: number;
   description?: string;
-  accommodation?: string;
+  accommodationId?: number; // lien vers accommodation
   image?: string;
   duration?: number;
   continent?: string;
+  itinerary?: string[]; 
 }

@@ -1,23 +1,33 @@
-<!-- tours-list.component.html -->
 <div class="filters-side">
   <mat-card class="filter-card">
     <h3>Filtres</h3>
 
     <mat-form-field appearance="outline">
+      <mat-label>Continent</mat-label>
+      <mat-select [(ngModel)]="filters.continent" (selectionChange)="onContinentChange()">
+        <mat-option value="">Tous</mat-option>
+        <mat-option *ngFor="let continent of continents" [value]="continent">
+          {{ continent }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
       <mat-label>Pays</mat-label>
       <mat-select [(ngModel)]="filters.country" (selectionChange)="applyFilters()">
         <mat-option value="">Tous</mat-option>
-        <mat-option *ngFor="let c of countries" [value]="c">{{ c }}</mat-option>
+        <mat-option *ngFor="let c of filteredCountries" [value]="c">{{ c }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Hébergement</mat-label>
-      <mat-select [(ngModel)]="filters.accommodation" (selectionChange)="applyFilters()">
+      <mat-select [(ngModel)]="filters.accommodationType" (selectionChange)="applyFilters()">
         <mat-option value="">Tous</mat-option>
-        <mat-option *ngFor="let a of accommodations" [value]="a">{{ a }}</mat-option>
+        <mat-option *ngFor="let a of uniqueAccommodationTypes" [value]="a">{{ a }}</mat-option>
       </mat-select>
     </mat-form-field>
+    
 
     <mat-form-field appearance="outline">
       <mat-label>Prix max (€)</mat-label>
@@ -36,18 +46,17 @@
     <div class="tour-info">
       <div class="tour-header">
         <h2>{{ tour.title }}</h2>
-        <span class="tour-type">{{ tour.accommodation }}</span>
+        <span class="tour-type">Hébergement: {{ getAccommodationType(tour.accommodationId || 0) }}</span>
       </div>
       <p class="tour-description">{{ tour.description }}</p>
       <div class="tour-meta">
         <span><mat-icon>place</mat-icon> {{ tour.country }}, {{ tour.continent }}</span>
         <span><mat-icon>calendar_today</mat-icon> {{ tour.duration }} jours</span>
-        <span><mat-icon>group</mat-icon> Jusqu'à 20 personnes</span>
       </div>
       <div class="tour-footer">
         <div class="price">Dès <strong>{{ tour.price }} €</strong></div>
-        <button mat-raised-button color="primary" (click)="goToDetails(tour.id)">
-          Voir détails
+        <button mat-raised-button color="primary" [routerLink]="['/tour-details', tour.id]">
+          Voir les détails
         </button>
       </div>
     </div>
