@@ -37,16 +37,19 @@ export class HomeComponent implements OnInit {
     this.countries = selected ? selected.countries : [];
     this.formData.country = '';
   }
-
   searchTours(): void {
     const { date1, date2 } = this.formData;
     if (new Date(date2) <= new Date(date1)) {
       alert("❗ La date de retour doit être postérieure à la date d'aller.");
       return;
     }
-    //sessionStorage.setItem('plannerReservation', JSON.stringify(this.formData));
+  
+    // 👉 Stocker dans sessionStorage pour usage futur
+    sessionStorage.setItem('searchContext', JSON.stringify(this.formData));
+  
     this.router.navigate(['/tours'], { queryParams: this.formData });
   }
+  
 
   private shuffleArray(array: any[]): any[] {
     return [...array].sort(() => Math.random() - 0.5);

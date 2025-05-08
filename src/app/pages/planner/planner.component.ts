@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AccommodationService } from 'src/app/core/services/accommodation.service';
 import { ContinentService } from 'src/app/core/services/continent.service';
 import { Accommodation } from 'src/app/core/models/accommodation.model';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-planner',
@@ -26,8 +27,8 @@ export class PlannerComponent implements OnInit {
   constructor(
     private accommodationService: AccommodationService,
     private continentService: ContinentService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private authService: AuthService  ) {}
 
   ngOnInit(): void {
     this.continentService.getContinents().subscribe({
@@ -76,16 +77,38 @@ export class PlannerComponent implements OnInit {
   }
 
   reserveAccommodation(acc: Accommodation): void {
-    const reservation = {
-      source: 'planner',
+    this.authService.isAuthenticated().subscribe(isAuth => {
+      if (!isAuth) {
+        alert('❌ Vous devez être connecté pour réserver.');
+        this.router.navigate(['/login']);
+        return;
+      }
+      sessionStorage.removeItem('tourReservation');
+      sessionStorage.removeItem('plannerReservation');
+      
+
+          // ✅ Enregistrer le contexte de recherche
+    sessionStorage.setItem('searchContext', JSON.stringify({
       continent: this.formData.continent,
       country: this.formData.country,
       date1: this.formData.date1,
       date2: this.formData.date2,
-      persons: this.formData.persons,
-      accommodation: acc
-    };
-    sessionStorage.setItem('plannerReservation', JSON.stringify(reservation));
-    this.router.navigate(['/reservation-summary']);
+      persons: this.formData.persons
+    }));
+  
+      const reservation = {
+        source: 'planner',
+        continent: this.formData.continent,
+        country: this.formData.country,
+        date1: this.formData.date1,
+        date2: this.formData.date2,
+        persons: this.formData.persons,
+        accommodation: acc
+      };
+  
+      sessionStorage.setItem('plannerReservation', JSON.stringify(reservation));
+      this.router.navigate(['/reservation-summary']);
+    });
   }
+  
 }

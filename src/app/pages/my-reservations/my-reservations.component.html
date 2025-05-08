@@ -1,0 +1,10 @@
+<mat-card *ngFor="let res of reservations">
+    <mat-card-title>{{ res.country }}, {{ res.continent }}</mat-card-title>
+    <mat-card-content>
+      <p>Dates : {{ res.date1 | date }} → {{ res.date2 | date }}</p>
+      <p>Personnes : {{ res.persons }}</p>
+      <p *ngIf="res.tour">Tour : {{ res.tour.title }}</p>
+      <p *ngIf="res.accommodation">Hébergement : {{ res.accommodation.name }}</p>
+    </mat-card-content>
+  </mat-card>
+  

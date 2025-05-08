@@ -1,62 +1,85 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { HttpClient } from '@angular/common/http';
-import { from, Observable, of } from 'rxjs';
+import { BehaviorSubject, from, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { User } from '../models/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private dbUrl = 'http://localhost:3000/users'; // URL de db.json
+  private dbUrl = 'http://localhost:3000/users';
+  private loggedInEmail$ = new BehaviorSubject<string | null>(null);
+  private currentUser$ = new BehaviorSubject<any>(null);
+  
+  constructor(private afAuth: AngularFireAuth, private http: HttpClient) {
+    this.afAuth.authState.subscribe(user => {
+      const email = user?.email || null;
+      this.loggedInEmail$.next(email);
+    
+      if (email) {
+        this.getUserDataByEmail(email).subscribe(users => {
+          if (users.length > 0) {
+            this.currentUser$.next(users[0]); // 🔥 auto-actualisation ici
+          }
+        });
+      } else {
+        this.currentUser$.next(null); // déconnexion ou non connecté
+      }
+    });
+    
+  }
 
-  constructor(private afAuth: AngularFireAuth, private http: HttpClient) {}
-
-  // Inscription via Firebase
   signUp(email: string, password: string, name: string): Observable<any> {
     return from(this.afAuth.createUserWithEmailAndPassword(email, password)).pipe(
       switchMap((userCredential) => {
-        // Ajouter le nom dans db.json
-        const newUser = {
-          email: email,
-          name: name
+        const newUser: User = {
+          uid: userCredential.user?.uid,
+          email,
+          name,
+          role: 'user'
         };
-        return this.http.post(this.dbUrl, newUser); // Enregistrer le nom dans db.json
+        return this.http.post(this.dbUrl, newUser);
       })
     );
   }
 
-  // Connexion
   signIn(email: string, password: string): Observable<any> {
-    return this.http.get<any[]>(`${this.dbUrl}?email=${email}`).pipe(
-      switchMap((users) => {
-        if (users.length > 0 && users[0].password === password) {
-          // Si c'est un administrateur
-          return of({ email, role: 'admin' });
-        } else {
-          // Sinon, utiliser Firebase pour la connexion
-          return from(this.afAuth.signInWithEmailAndPassword(email, password)).pipe(
-            map((userCredential) => ({
-              email: userCredential.user?.email,
-              role: 'user'
-            }))
-          );
-        }
-      })
+    return from(this.afAuth.signInWithEmailAndPassword(email, password)).pipe(
+      map((userCredential) => ({
+        email: userCredential.user?.email,
+        role: 'user'
+      }))
     );
   }
 
-  // Déconnexion
   logout(): Observable<void> {
     return from(this.afAuth.signOut());
   }
 
-  // Obtenir l'utilisateur actuel
   getCurrentUser(): Observable<any> {
     return this.afAuth.authState;
   }
-  // Vérifier si l'utilisateur est connecté
-getUserDataByEmail(email: string): Observable<any> {
-  return this.http.get<any[]>(`http://localhost:3000/users?email=${email}`);
-}
 
+  getLoggedInEmail(): Observable<string | null> {
+    return this.loggedInEmail$.asObservable();
+  }
+
+  getUserDataByEmail(email: string): Observable<User[]> {
+    return this.http.get<User[]>(`${this.dbUrl}?email=${email}`);
+  }
+
+  updateUser(id: string, updatedUser: Partial<User>): Observable<any> {
+    return this.http.patch(`${this.dbUrl}/${id}`, updatedUser);
+  }
+  updateLoggedInUser(user: User): void {
+    this.currentUser$.next(user);
+  }
+  
+  getLoggedInUserObservable(): Observable<User | null> {
+    return this.currentUser$.asObservable();
+  }
+  isAuthenticated(): Observable<boolean> {
+    return this.afAuth.authState.pipe(map(user => !!user));
+  }
   
 }

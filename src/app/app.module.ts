@@ -34,7 +34,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
-
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MyReservationsComponent } from './pages/my-reservations/my-reservations.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,9 @@ import { MatCardModule } from '@angular/material/card';
     ReservationSummaryComponent,
     ConfirmationComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditProfileComponent,
+    MyReservationsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,8 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     AngularFireModule.initializeApp(firebaseConfig), // ✅ Init firebase compat
     AngularFireAuthModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

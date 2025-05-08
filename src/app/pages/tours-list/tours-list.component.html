@@ -55,7 +55,7 @@
       </div>
       <div class="tour-footer">
         <div class="price">Dès <strong>{{ tour.price }} €</strong></div>
-        <button mat-raised-button color="primary" [routerLink]="['/tour-details', tour.id]">
+        <button mat-raised-button color="primary" (click)="goToTourDetails(tour.id)">
           Voir les détails
         </button>
       </div>

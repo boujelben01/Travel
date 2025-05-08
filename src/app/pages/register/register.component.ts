@@ -14,11 +14,10 @@ export class RegisterComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   register(): void {
-    console.log('Formulaire soumis'); // Vérifiez si ce message s'affiche dans la console
     this.authService.signUp(this.email, this.password, this.name).subscribe({
-      next: (user) => {
-        console.log('Utilisateur créé :', user);
-        this.router.navigate(['/']); // redirige vers page d’accueil
+      next: () => {
+        alert('Inscription réussie !');
+        this.router.navigate(['/']);
       },
       error: (err) => console.error('Erreur d\'inscription :', err)
     });

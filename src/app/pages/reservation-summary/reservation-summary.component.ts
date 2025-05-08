@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Reservation } from 'src/app/core/models/reservation.model';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { ReservationService } from 'src/app/core/services/reservation.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class ReservationSummaryComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private reservationService: ReservationService
+    private reservationService: ReservationService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -29,14 +31,21 @@ export class ReservationSummaryComponent implements OnInit {
   
   confirm(): void {
     if (this.reservation) {
-      this.reservationService.saveReservation(this.reservation).subscribe({
-        next: () => {
-          console.log('Réservation enregistrée dans db.json');
-         // sessionStorage.removeItem('tourReservation');
-          //sessionStorage.removeItem('plannerReservation');
-          this.router.navigate(['/confirmation']);
-        },
-        error: (err) => console.error('Erreur enregistrement réservation', err)
+      this.authService.getCurrentUser().subscribe(user => {
+        if (user?.email) {
+          if (this.reservation) {
+            this.reservation.userEmail = user.email; // Associer l'email de l'utilisateur
+          }
+          this.reservationService.saveReservation(this.reservation!).subscribe({
+            next: () => {
+              console.log('Réservation enregistrée avec userEmail');
+              this.router.navigate(['/confirmation']);
+            },
+            error: (err) => console.error('Erreur enregistrement réservation', err)
+          });
+        }
       });
     }
-  }}
+  }
+  
+  }

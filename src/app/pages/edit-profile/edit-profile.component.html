@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title>Modifier mon profil</mat-card-title>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input matInput [(ngModel)]="name" name="name" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" name="email" disabled />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Mettre à jour</button>
+  </form>
+</mat-card>

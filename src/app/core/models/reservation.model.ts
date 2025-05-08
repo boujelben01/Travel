@@ -7,4 +7,5 @@ export interface Reservation {
   date2: string; // Date de fin
   persons: number; // Nombre de personnes
   accommodation?: Accommodation; // Hébergement sélectionné (optionnel)
+  userEmail?: string; 
 }

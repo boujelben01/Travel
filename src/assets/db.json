@@ -581,158 +581,68 @@
   ],
   "reservations": [
     {
-      "id": "8d59",
-      "continent": "Europe",
-      "country": "France",
-      "date1": "2025-05-10T23:00:00.000Z",
-      "date2": "2025-05-12T23:00:00.000Z",
-      "persons": 3,
-      "accommodation": {
-        "id": 12,
-        "country": "France",
-        "name": "Château Versailles",
-        "type": "Maison",
-        "city": "Versailles",
-        "pricePerNight": 140,
-        "stars": 5,
-        "image": "assets/images/versailles.jpg",
-        "availableFrom": "2025-05-10",
-        "availableTo": "2025-12-31"
-      }
-    },
-    {
-      "id": "16b3",
-      "continent": "Australia",
-      "country": "New Zealand",
-      "date1": "2025-05-06T23:00:00.000Z",
-      "date2": "2025-05-08T23:00:00.000Z",
-      "persons": 2,
-      "accommodation": {
-        "id": "16",
-        "country": "New Zealand",
-        "name": "Queenstown Lakeview Lodge",
-        "type": "Maison",
-        "city": "Queenstown",
-        "pricePerNight": 150,
-        "stars": 5,
-        "image": "assets/images/newzealandhome.jpg",
-        "availableFrom": "2025-04-15",
-        "availableTo": "2025-12-01",
-        "isAvailable": true
-      }
-    },
-    {
-      "id": "23c4",
-      "continent": "Australia",
-      "country": "New Zealand",
-      "date1": "2025-05-06T23:00:00.000Z",
-      "date2": "2025-05-08T23:00:00.000Z",
-      "persons": 2,
-      "accommodation": {
-        "id": "16",
-        "country": "New Zealand",
-        "name": "Queenstown Lakeview Lodge",
-        "type": "Maison",
-        "city": "Queenstown",
-        "pricePerNight": 150,
-        "stars": 5,
-        "image": "assets/images/newzealandhome.jpg",
-        "availableFrom": "2025-04-15",
-        "availableTo": "2025-12-01",
-        "isAvailable": true
-      }
-    },
-    {
-      "id": "14bb",
-      "source": "planner",
-      "continent": "America",
-      "country": "USA",
-      "date1": "",
-      "date2": "",
-      "persons": 1,
-      "accommodation": {
-        "id": "29",
-        "country": "USA",
-        "name": "Yellowstone Cabin Retreat",
-        "type": "Maison",
-        "city": "Wyoming",
-        "pricePerNight": 140,
-        "stars": 4,
-        "image": "assets/images/yello.jpg",
-        "availableFrom": "2025-05-15",
-        "availableTo": "2025-10-30"
-      }
-    },
-    {
-      "id": "60e9",
+      "id": "d88a",
       "source": "tour",
-      "tourId": "2",
+      "tourId": "3",
       "tour": {
+        "id": "3",
+        "title": "Safari au Kenya",
+        "country": "Kenya",
+        "continent": "Africa",
+        "price": 1500,
+        "image": "assets/images/safari.jpg",
+        "duration": 6,
+        "accommodationId": 2,
+        "description": "Safari à la rencontre des Big Five en Afrique.",
+        "itinerary": [
+          "Arrivée à Nairobi, installation au Safari Lodge, dîner traditionnel africain.",
+          "Safari matinal dans le parc national Masai Mara, observation des Big Five.",
+          "Visite d'un village Masaï, découverte de la culture locale.",
+          "Safari en 4x4 au lever du soleil, déjeuner au camp, temps libre en nature.",
+          "Balade guidée dans la savane, photographie animalière, soirée au coin du feu.",
+          "Dernier petit-déjeuner au lodge, détente et transfert à l’aéroport pour le départ."
+        ]
+      },
+      "accommodation": {
         "id": "2",
-        "title": "Romance à Paris",
-        "country": "France",
-        "continent": "Europe",
-        "price": 980,
-        "image": "assets/images/paris.jpg",
-        "duration": 5,
-        "accommodationId": 1,
-        "description": "Un séjour romantique au cœur de Paris.",
-        "itinerary": [
-          "Arrivée à Paris, croisière sur la Seine, dîner romantique.",
-          "Visite de la Tour Eiffel et du Louvre, shopping dans les Champs-Élysées.",
-          "Brunch dans un café parisien, promenade au Jardin du Luxembourg, départ."
-        ]
-      },
-      "accommodation": {
-        "id": "1",
-        "country": "France",
-        "name": "Hôtel du Louvre",
-        "type": "Hotel",
-        "city": "Paris",
-        "pricePerNight": 120,
-        "stars": 4,
-        "image": "assets/images/hotellouvre.jpg",
-        "availableFrom": "2025-05-10",
+        "country": "Kenya",
+        "name": "Safari Lodge",
+        "type": "Camping",
+        "city": "Nairobi",
+        "pricePerNight": 80,
+        "stars": 3,
+        "image": "assets/images/safari.jpg",
+        "availableFrom": "2025-01-01",
         "availableTo": "2025-12-31"
-      }
+      },
+      "continent": "Africa",
+      "country": "Kenya",
+      "date1": "2025-05-08T23:25:52.872Z",
+      "date2": "2025-05-08T23:25:52.872Z",
+      "persons": 1,
+      "userEmail": "salloufa@gmail.com"
     },
     {
-      "id": "4679",
-      "source": "tour",
-      "tourId": "5",
-      "tour": {
-        "id": "5",
-        "title": "Aventures en Thaïlande",
-        "country": "Thailand",
-        "continent": "Asia",
-        "price": 850,
-        "image": "assets/images/thailand.jpg",
-        "duration": 8,
-        "accommodationId": 5,
-        "description": "Un mélange de temples, plages et marchés flottants.",
-        "itinerary": [
-          "Arrivée à Bangkok, installation à l'hôtel en bord de fleuve, dîner thaïlandais au marché de nuit.",
-          "Visite du Grand Palais et du temple Wat Pho, balade en bateau sur les khlongs.",
-          "Journée à Ayutthaya, ancienne capitale royale, découverte des temples en ruine.",
-          "Transfert à Chiang Mai, installation et promenade dans la vieille ville.",
-          "Visite du temple Wat Phra That Doi Suthep et marché artisanal local.",
-          "Journée nature : sanctuaire des éléphants, interaction éthique et déjeuner végétarien.",
-          "Vol vers Phuket, détente sur la plage, coucher de soleil sur la mer d’Andaman.",
-          "Dernier petit-déjeuner tropical, temps libre pour shopping, transfert vers l’aéroport."
-        ]
-      },
+      "id": "b2cb",
+      "source": "planner",
+      "continent": "Africa",
+      "country": "Morocco",
+      "date1": "2025-05-17T23:00:00.000Z",
+      "date2": "2025-05-20T23:00:00.000Z",
+      "persons": 4,
       "accommodation": {
-        "id": "5",
-        "country": "Thailand",
-        "name": "Bangkok Riverside",
-        "type": "Hotel",
-        "city": "Bangkok",
-        "pricePerNight": 95,
-        "stars": 4,
-        "image": "assets/images/bankok.jpg",
-        "availableFrom": "2025-01-15",
-        "availableTo": "2025-12-15"
-      }
+        "id": "11",
+        "country": "Morocco",
+        "name": "Riad Marrakech",
+        "type": "Maison",
+        "city": "Marrakech",
+        "pricePerNight": 65,
+        "stars": 3,
+        "image": "assets/images/marrakech_maison.jpg",
+        "availableFrom": "2025-04-01",
+        "availableTo": "2025-12-31"
+      },
+      "userEmail": "salloufa@gmail.com"
     }
   ]
 }

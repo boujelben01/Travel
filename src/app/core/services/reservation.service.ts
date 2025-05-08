@@ -23,5 +23,12 @@ export class ReservationService {
       })
     );
   }
+  getReservations(): Observable<Reservation[]> {
+    return this.http.get<Reservation[]>(this.apiUrl);
+  }
+  getReservationsByEmail(email: string): Observable<Reservation[]> {
+    return this.http.get<Reservation[]>(`${this.apiUrl}?userEmail=${email}`).pipe(
+      map(reservations => reservations.filter(reservation => reservation.userEmail === email))
+    );
   
-}
+}}

@@ -9,9 +9,11 @@
   <span class="spacer"></span>
 
   <ng-container *ngIf="isLoggedIn">
-    <span>👤 {{ currentUserName }}</span>
-    <button mat-button (click)="logout()">🚪 Déconnexion</button>
+    <a mat-button routerLink="/profile">{{ currentUserName }}</a>
+    <a mat-button routerLink="/my-reservations">📜 Mes Réservations</a>
+       <button mat-button (click)="logout()">🚪 Déconnexion</button>
   </ng-container>
+  
 
   <ng-container *ngIf="!isLoggedIn">
     <a mat-button routerLink="/login">🔐 Connexion</a>

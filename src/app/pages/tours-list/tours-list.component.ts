@@ -3,7 +3,7 @@ import { TourService } from 'src/app/core/services/tour.service';
 import { AccommodationService } from 'src/app/core/services/accommodation.service';
 import { Tour } from 'src/app/core/models/tour.model';
 import { Accommodation } from 'src/app/core/models/accommodation.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tours-list',
@@ -29,7 +29,8 @@ export class ToursListComponent implements OnInit {
   constructor(
     private tourService: TourService,
     private accommodationService: AccommodationService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -95,5 +96,20 @@ export class ToursListComponent implements OnInit {
     const accommodation = this.accommodations.find(a => a.id.toString() === accommodationId.toString());
     return accommodation ? accommodation.type : 'Inconnu';
   }
+
+  goToTourDetails(tourId: number): void {
+    const searchContext = {
+      continent: this.filters.continent,
+      country: this.filters.country,
+      date1: '', // tu peux améliorer ça si tu récupères les dates
+      date2: '',
+      persons: 1
+    };
+  
+    sessionStorage.setItem('searchContext', JSON.stringify(searchContext));
+    // redirection
+    this.router.navigate(['/tour-details', tourId]);
+  }
+  
   
 }
